@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "preserve",
+    "esModuleInterop": true
+  },
+  "include": ["**/*.tsx", "**/*.ts", "**/*.js"]
+}
