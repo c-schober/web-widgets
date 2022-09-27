@@ -4,7 +4,9 @@ import { to } from 'await-to-js'
 
 import Button from 'components/ui/Button'
 
-const PreferenceCenter = () => {
+import type { FC } from 'react'
+
+const PreferenceCenter: FC = () => {
   const [birthday, setBirthday] = useState('')
 
   const handleSubmit = async (event) => {
@@ -29,7 +31,7 @@ const PreferenceCenter = () => {
         Birthday:
         <input
           value={birthday}
-          onChange={(e) => setBirthday(e.value)}
+          onChange={(e) => setBirthday(e.target.value)}
           type="date"
           autoComplete="off"
           autoCorrect="off"
