@@ -18,7 +18,7 @@ const PreferenceCenter: FC<Props> = ({ email }) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const [error, success] = await to(
-      axios.post('https://ed-headless-ipxo0lerz-everdrop.vercel.app/api/update-email-profile', {
+      axios.post('https://www.everdrop.de/api/update-email-profile', {
         email,
         formData: { birthdate: birthday },
       })
