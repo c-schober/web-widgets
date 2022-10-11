@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import mergeRefs from 'react-merge-refs'
 import { forwardRef, useRef } from 'react'
-import LoadingDots from 'components/ui/LoadingDots'
+import LoadingDots from '../ui/LoadingDots'
 
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 
