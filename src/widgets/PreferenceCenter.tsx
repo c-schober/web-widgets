@@ -22,12 +22,7 @@ const PreferenceCenter: FC<Props> = ({ email }) => {
     const date = new Date(value)
     const diff = Date.now() - date.getTime()
     const minAgeInMilliseconds = MIN_AGE * 365 * 24 * 60 * 60 * 1000
-    const isValidEntry = minAgeInMilliseconds < diff
-    setValid(isValidEntry)
-    if (!isValidEntry) {
-      setBirthday('')
-      return
-    }
+    setValid(minAgeInMilliseconds < diff)
     setBirthday(value)
   }, [])
 
