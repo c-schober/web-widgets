@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-h1, h2, h3, h4 {
-    text-transform: uppercase;
-    font-weight: semibold;
+
+#box {
+  text-shadow: 0 2px 8px rgba(158, 143, 32, 0.77), 0 2px 0 rgba(151, 136, 47, 0.24);
+  transition: all 0.2s ease;
 }
 
-h2 {
-    font-size: 1.3rem;
+.day {
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  position: relative;
+}
 
+.poem-animate {
+  text-shadow: 0 4px 4px rgba(255, 255, 255, 0.2), 0 6px 6px rgba(255, 255, 255, 0.4),
+    0 8px 18px rgba(255, 255, 255, 0.8), 0 22px 18px rgba(255, 255, 255, 0.5), 0 -4px 4px rgba(255, 255, 255, 0.2),
+    0 -6px 6px rgba(255, 255, 255, 0.4), 0 -8px 18px rgba(255, 255, 255, 0.8), 0 -22px 18px rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.2);
+  top: 12px;
+  animation: mov 0.12s infinite;
+}
+
+@keyframes mov {
+  0% {
+    transform: translatey(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translatey(-15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatey(25px);
+    opacity: 0;
+  }
 }
