@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import axios from 'axios'
 import { to } from 'await-to-js'
 
@@ -11,9 +11,25 @@ type Props = {
 }
 type ApiAnswer = 'success' | 'error' | ''
 
+const MIN_AGE = 14
+
 const PreferenceCenter: FC<Props> = ({ email }) => {
   const [birthday, setBirthday] = useState('')
   const [apiAnswer, setApiAnswer] = useState<ApiAnswer>('')
+  const [isValid, setValid] = useState(true)
+
+  const validateBirthdate = useCallback((value: string): void => {
+    const date = new Date(value)
+    const diff = Date.now() - date.getTime()
+    const minAgeInMilliseconds = MIN_AGE * 365 * 24 * 60 * 60 * 1000
+    const isValidEntry = minAgeInMilliseconds < diff
+    setValid(isValidEntry)
+    if (!isValidEntry) {
+      setBirthday('')
+      return
+    }
+    setBirthday(value)
+  }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -49,7 +65,7 @@ const PreferenceCenter: FC<Props> = ({ email }) => {
           Geburtstag:
           <input
             value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
+            onChange={(e) => validateBirthdate(e.target.value)}
             type="date"
             autoComplete="off"
             autoCorrect="off"
@@ -60,11 +76,12 @@ const PreferenceCenter: FC<Props> = ({ email }) => {
             focus:ring-2 focus:ring-focus focus:ring-offset"
           />
         </label>
-
-        <Button className="mt-4" type="submit" variant="primary" loading={false} disabled={false}>
+        {!isValid && <p className="mt-4">Das eingegebene Datum ist ungültig.</p>}
+        <Button className="mt-4" type="submit" variant="primary" loading={false} disabled={!isValid}>
           Jetzt absenden
         </Button>
       </form>
+
       {apiAnswer === 'error' && (
         <p className="text-alert">
           Hoppla, irgendetwas funktioniert gerade nicht richtig.
