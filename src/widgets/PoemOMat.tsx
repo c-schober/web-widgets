@@ -22,7 +22,7 @@ const POEMS = [
   'Jetzt hasch mi drausbracht ',
   'Ich hab mir so nen Tick eingefangen',
   'I hab heute die falsche Hose angehabt',
-  'Kann ja ich nichts dafür, dass der Regen die Aste so schwer macht, dass sie ins Ziel reinhängen',
+  'Kann ja ich nichts dafür, dass der Regen die Äste so schwer macht, dass sie ins Ziel reinhängen',
   'I hab mei Brill heit net putzt',
   'Bei dem Regen kann i net schießen',
   'Blödes Vieh ',
@@ -37,7 +37,7 @@ const POEMS = [
   'Des einzige was momentan arbeitet ist der Magen ',
   'Mi irritiert der Hund',
   'Was blubbert der denn',
-  'Pffftt ',
+  'Pffftt',
   'I bin übertrainiert ',
   'Des is wieder a typischer Rechtsschuss. Für links ist des gar nix',
   'Musch nunderdrehen',
@@ -46,6 +46,8 @@ const POEMS = [
   'Der geht zu weit rechts',
   'Scho wieder gwunken',
   'heut gehn alle zu hoch',
+  'Ah komm, des gibts doch net',
+  'Geschtern liefs so gut',
 ]
 
 const POEMS_COUNT = POEMS.length
