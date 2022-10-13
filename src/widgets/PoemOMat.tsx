@@ -52,10 +52,12 @@ const getRandomEntry = () => {
 }
 
 const PoemOMat: FC = () => {
-  const [activeWord, setActiveWord] = useState('spruch-o-mat')
+  const [activeWord, setActiveWord] = useState('der diana spruch-o-mat')
   const [isRunning, setIsRunning] = useState(false)
+  const [isInit, setIsInit] = useState(true)
 
   const startSpin = () => {
+    setIsInit(false)
     setIsRunning(true)
     const interval = setInterval(() => {
       setActiveWord(POEMS[getRandomEntry()])
@@ -68,19 +70,22 @@ const PoemOMat: FC = () => {
   }
 
   return (
-    <div className="relative text-invert text-[35px] md:text-[45px] text-center uppercase rounded-xl p-4 flex justify-center items-center h-[500px] w-full bg-gradient-to-r from-[#353E4E] to-[#010102]">
-      <div id="box">
-        <span className={cn('day', { 'poem-animate': isRunning })}>{activeWord}&nbsp;</span>
-      </div>
-      <div className="absolute bottom-4 w-full flex justify-center items-center">
-        {!isRunning && (
-          <div
-            onClick={startSpin}
-            className="transition-all text-[14px] animate-blink cursor-pointer rounded-md border border-[#aaa] py-4 w-[200px] text-center bg-[#459a48] text-invert hover:bg-invert hover:text-invert"
-          >
-            Start
-          </div>
-        )}
+    <div className="w-full px-2">
+      <div className="relative text-invert text-center uppercase rounded-xl flex-col p-4 flex justify-center items-center h-[500px] w-full bg-gradient-to-r from-[#353E4E] to-[#010102]">
+        <p className="absolute text-[#aaa] top-[25px]">Unsere Parcours-Sprüche Soforthilfe 😅</p>
+        <div className="text-[35px] md:text-[45px]" id="box">
+          <span className={cn('day', { 'poem-animate': isRunning })}>{activeWord}&nbsp;</span>
+        </div>
+        <div className="absolute bottom-4  w-full flex justify-center items-center">
+          {!isRunning && (
+            <div
+              onClick={startSpin}
+              className="transition-all text-[14px] animate-blink cursor-pointer rounded-md border border-[#aaa] py-4 w-[200px] text-center bg-[#459a48] text-invert hover:bg-invert hover:text-invert"
+            >
+              {isInit ? 'Start' : 'Nochmal'}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
