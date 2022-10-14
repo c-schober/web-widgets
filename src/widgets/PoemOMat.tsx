@@ -77,7 +77,7 @@ const PoemOMat: FC = () => {
   return (
     <div className="w-full px-2">
       <div className="relative text-invert text-center uppercase rounded-xl flex-col p-4 flex justify-center items-center h-[500px] w-full bg-gradient-to-r from-[#353E4E] to-[#010102]">
-        <p className="absolute text-[#aaa] top-[25px]">Unsere Parcours-Sprüche Soforthilfe 😅</p>
+        <p className="absolute text-[#aaa] top-[25px] md:text-[15px]">Unsere Parcours-Sprüche Soforthilfe 😅</p>
         <div className="text-[35px] md:text-[45px]" id="box">
           <span className={cn('day', { 'poem-animate': isRunning })}>{activeWord}&nbsp;</span>
         </div>
