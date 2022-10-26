@@ -48,6 +48,12 @@ const POEMS = [
   'heut gehn alle zu hoch',
   'Ah komm, des gibts doch net',
   'Geschtern liefs so gut',
+  'Ja sag’s doch glei Mensch ',
+  'Des Tier muss einfach zu schiessen sein, des triffst sogar du',
+  'I bin vorhin erst von der Arbeit gekommen ',
+  'Zieh mal gscheit aus',
+  'Kaum tu ich mal den Arm net runter, geht der Pfeil drüber',
+  'Lass die blöde Rückenspannung weg, dann bleibt der Pfeil unten',
 ]
 
 const POEMS_COUNT = POEMS.length
