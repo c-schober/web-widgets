@@ -42,7 +42,7 @@ const POEMS = [
   'Des is wieder a typischer Rechtsschuss. Für links ist des gar nix',
   'Musch nunderdrehen',
   'Die Spur war no warm',
-  'I hab eigentlich ins kill geschaut',
+  'I hab eigentlich ins Kill geschaut',
   'Der geht zu weit rechts',
   'Scho wieder gwunken',
   'heut gehn alle zu hoch',
@@ -54,6 +54,10 @@ const POEMS = [
   'Zieh mal gscheit aus',
   'Kaum tu ich mal den Arm net runter, geht der Pfeil drüber',
   'Lass die blöde Rückenspannung weg, dann bleibt der Pfeil unten',
+  'Hui, da kann man ja vorbei schießen',
+  'Lieber schnitzen als schwimmen',
+  'Bei dem Nebel seh i des Viech net',
+  'Hey Alter, ich bin heut zwar im Training, aber ich schieß nich!',
 ]
 
 const POEMS_COUNT = POEMS.length
